@@ -8,9 +8,7 @@ const AudioChat = () => {
   const [isConnected, setIsConnected] = useState(false);
 
   useEffect(() => {
-    socketRef.current = io(
-      "https://nodejs-liart-chi.vercel.app/audio-server.js"
-    );
+    socketRef.current = io("https://nodejs-liart-chi.vercel.app");
 
     socketRef.current.on("offer", handleOffer);
     socketRef.current.on("answer", handleAnswer);
