@@ -9,7 +9,7 @@ const AudioChat = () => {
 
   useEffect(() => {
     socketRef.current = io("https://server-8ti1.onrender.com", {
-      transports: ["websocket"], // Force WebSocket transport
+      transports: ["websocket"], // Force WebSocket transports
     });
 
     socketRef.current.on("offer", handleOffer);
