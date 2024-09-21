@@ -8,7 +8,9 @@ const AudioChat = () => {
   const [isConnected, setIsConnected] = useState(false);
 
   useEffect(() => {
-    socketRef.current = io("https://server-six-plum.vercel.app");
+    socketRef.current = io("https://server-six-plum.vercel.app", {
+      transports: ["websocket"], // Force WebSocket transport
+    });
 
     socketRef.current.on("offer", handleOffer);
     socketRef.current.on("answer", handleAnswer);
